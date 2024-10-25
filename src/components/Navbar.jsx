@@ -1,8 +1,15 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React, { useState } from 'react'
+import { NavLink, useNavigate } from 'react-router-dom'
 import {assets} from "../assets/assets"
 
 const Navbar = () => {
+
+  const navigate = useNavigate()
+
+  const[showMenu,setShowMenu ]= useState(false)
+  const [token, setToken] = useState(true)
+
+
   return (
 
     <div className='flex items-center justify-between text-sm py-4 mb-5 border-b-2 border-b-gray-400'>
@@ -30,12 +37,18 @@ const Navbar = () => {
           <hr className='border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden'/>
         </NavLink>
       </ul>
-      <div>
-        <button>Create Account</button>
+      <div className='flex-item-center gap-4'>
+
+        {
+          token
+          ? <div></div>
+          :  <button onClick={()=>navigate('/login')}className='bg-primary text-white px-8 py-3 rounded-full font-light hidden md:block '>Create Account</button>
+        }
+      
 
       </div>
     </div>
   )
-}
-
+} 
+ 
 export default Navbar
