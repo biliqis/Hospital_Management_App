@@ -8,11 +8,13 @@ import Appointment from "./pages/Appointment";
 import Navbar from "./components/Navbar";
 import Login from "./pages/Login"
 import Contact from "./pages/Contact"
+import Headers from "./components/Headers";
 
 const App = () => {
   return (
     <div className="mx-4 sm:mx-[10]">
       <Navbar/>
+      <Headers/>
 
       <Routes>
         <Route path="/" element={<Home />} />
