@@ -7,6 +7,7 @@ const Appointment = () => {
   const { docId } = useParams();
   const { doctors, currencySymbol } = useContext(AppContext);
   const [docInfo, setDocInfo] = useState(null);
+  const [docSlots, setDocSlots] = useState([])
 
   const fetchDocInfo = async () => {
     const docInfo = doctors.find((doc) => doc._id === docId);
@@ -54,8 +55,8 @@ const Appointment = () => {
               {docInfo.about}
             </p>
           </div>
-          <p>
-            Appointment fee:<span>{currencySymbol}{docInfo.fees}</span>
+          <p className="text-gray-500 font-medium mt-4">
+            Appointment fee:<span className="text-gray-600">{currencySymbol}{docInfo.fees}</span>
           </p>
     
         </div>
