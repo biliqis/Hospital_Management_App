@@ -64,7 +64,7 @@ const Navbar = () => {
                   onClick={() => navigate("my-appointments")}
                   className="hover:text-black cursor-pointer"
                 >
-                  Appointment
+                 My Appointments
                 </p>
                 <p
                   onClick={() => setToken(false)}
